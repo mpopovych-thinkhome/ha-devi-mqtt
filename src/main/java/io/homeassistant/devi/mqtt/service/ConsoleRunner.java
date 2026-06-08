@@ -120,10 +120,13 @@ public class ConsoleRunner {
             for (JsonElement room : deviConfig.getAsJsonArray("rooms")) {
                 String devicePeerID = room.getAsJsonObject().get("devicePeerID").getAsString();
                 String deviceSN = room.getAsJsonObject().get("serialNumber").getAsString();
+                String roomName = room.getAsJsonObject().has("name")
+                        ? room.getAsJsonObject().get("name").getAsString() : deviceSN;
 
                 Map<String, String> valuesMap = new HashMap<>();
                 valuesMap.put("deviceSN", deviceSN);
                 valuesMap.put("deviceNumber", String.valueOf(deviceNumber++));
+                valuesMap.put("deviceName", roomName);
 
                 readAndProcessTemplates(autoDiscoveryTemplatesPath, valuesMap);
 

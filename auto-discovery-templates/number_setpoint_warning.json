@@ -8,11 +8,11 @@
         "${deviceSN}"
       ],
       "manufacturer": "Danfoss",
-      "name": "DeviReg ${deviceSN}",
+      "name": "${deviceName}",
       "model": "DeviReg Smart Thermostat"
     },
     "unique_id": "id_${deviceSN}_setpoint_warning",
-    "default_entity_id": "devireg_${deviceSN}_setpoint_warning",
+    "object_id": "devireg_${deviceSN}_setpoint_warning",
     "name": "T Warning",
     "device_class": "temperature",
     "state_class": "measurement",
